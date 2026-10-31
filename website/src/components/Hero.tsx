@@ -52,7 +52,8 @@ export default function Hero() {
             <ArrowRight className="h-3 w-3" />
           </a>
           <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
-          Bring <span className="spectral-text">full spectrum color</span>
+          Bring
+          <br /><span className="spectral-text">full spectrum color</span>
           <br />
           to your point clouds.
           </h1>
