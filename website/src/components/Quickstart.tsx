@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Terminal, Sparkles, Waves, FileCode2, Box } from "lucide-react";
+import { Sparkles, Waves, FileCode2, Box } from "lucide-react";
 import CodeBlock from "./CodeBlock";
 import { SectionHeader } from "./Features";
 const EXAMPLES = [
