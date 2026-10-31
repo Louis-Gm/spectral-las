@@ -33,7 +33,7 @@ export function DocsCTA() {
       </div>
       <div className="spectral-border relative mt-16 overflow-hidden rounded-3xl bg-[#0a0f1c] px-6 py-16 text-center">
         <LogoMark width={150} className="mx-auto" />
-        <h2 className="mt-6 text-3xl font-bold tracking-tight text-white">Start with SpectralLAS</h2>
+        <h2 className="mt-6 text-3xl font-bold tracking-tight text-white">Start with Spectral LAS</h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-slate-400">The processing package is Apache-2.0. Install version 0.1.0 from PyPI using Python 3.10–3.12. Matching wheels avoid a local Rust build; source builds require Rust.</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <CopyCommand cmd={site.installCommand} />

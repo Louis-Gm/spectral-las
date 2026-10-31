@@ -57,7 +57,7 @@ export default function Hero() {
             for your LAS <span className="spectral-text">point clouds</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-            SpectralLAS brings imagery and LAS point clouds together with a Python API
+            Spectral LAS brings imagery and LAS point clouds together with a Python API
             and Rust projection kernels. Work with RGB, multispectral and hyperspectral
             workflows, retain point-aligned spectra, and create raster products.
           </p>

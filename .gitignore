@@ -21,6 +21,7 @@ build/
 node_modules/
 *.tsbuildinfo
 # Local configuration and data
+.env
 .env.local
 .env.*.local
 .env.example

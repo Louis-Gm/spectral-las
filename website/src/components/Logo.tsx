@@ -12,7 +12,7 @@ export function LogoMark({ width = 70, className = "" }: { width?: number; class
       viewBox="0 0 100 20"
       className={className}
       role="img"
-      aria-label="SpectralLAS logo"
+      aria-label="Spectral LAS logo"
     >
       {SPECTRUM.map((c, i) => (
         <circle key={c} cx={10 + i * 20} cy={10} r={7} fill={c} />

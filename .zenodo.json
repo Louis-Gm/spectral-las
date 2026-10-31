@@ -1,0 +1,37 @@
+{
+  "title": "Spectral LAS: a Rust-backed Python package for point cloud colorization, supporting all your imagery needs from panchromatic, to RGB, to hyperspectral.",
+  "version": "0.1.0",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "creators": [
+    {
+      "name": "Grand'Maison, Louis-Vincent",
+      "affiliation": "Université Laval",
+      "orcid": "REPLACE_WITH_ORCID_IF_DESIRED"
+    }
+  ],
+  "description": "Spectral LAS colorizes LAS point clouds using panchromatic, RGB, multispectral, or hyperspectral imagery through an explicit Python interface and Rust-backed projection kernels.",
+  "keywords": [
+    "lidar",
+    "point cloud",
+    "LAS",
+    "hyperspectral",
+    "multispectral",
+    "remote sensing",
+    "Rust",
+    "Python"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Louis-Gm/spectral-las",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://pypi.org/project/spectral-las/",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}

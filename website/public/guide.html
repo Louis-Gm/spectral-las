@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SpectralLAS — installation and source guide</title>
+<title>Spectral LAS — installation and source guide</title>
 <style>
 body { margin:0; padding:2rem 1.25rem; background:#060912; color:#cbd5e1; font:16px/1.7 system-ui,sans-serif; }
 main { max-width:900px; margin:auto; }
@@ -15,19 +15,13 @@ code { font-family:ui-monospace,monospace; font-size:.9em; }
 </head>
 <body><main>
 
-<h1>SpectralLAS guide</h1>
+<h1>Spectral LAS guide</h1>
 <p>Version 0.1.0 is available on <a href="https://pypi.org/project/spectral-las/">PyPI</a>. Pre-alpha: validate outputs against your acquisition data.</p>
 <h2>Install from PyPI</h2>
 <pre><code>python -m pip install spectral-las
 # With optional LAZ compression support:
 python -m pip install "spectral-las[laz]"</code></pre>
 <p>Use Python 3.10–3.12. Matching wheels do not require a Rust toolchain; source builds do.</p>
-<p>A Python/Rust processing package and an independently built React website in one repository.</p>
-<p><a href="./">Back to the project website</a></p>
-<h2>Build the package</h2>
-<p>Run these commands from the repository root. Use an active Python 3.10–3.12 environment and a Rust toolchain.</p>
-<pre><code>python -m pip install maturin
-maturin develop --release</code></pre>
 <h2>Python packages</h2>
 <ul><li><code>spectral_las.pointcloud</code>: LAS chunks, transforms, statistics, RGB and spectral painting.</li>
 <li><code>spectral_las.raster</code>: image windows, band operations, rasterization and mosaics.</li>
@@ -61,13 +55,7 @@ rasterize_pointcloud("painted.las", "mean.tif", resolution=0.2,
 <li>The global painting depth map remains in RAM. Orthomosaics use a capped but in-memory surface.</li>
 <li>Original interpolation and tile-edge splatting require acquisition-level validation.</li>
 <li>PyPI availability and packaging checks do not establish processing accuracy, broad sensor coverage or benchmark performance.</li></ul>
-<h2>Website development</h2>
-<pre><code>cd website
-npm install
-npm run dev
-# Production build:
-npm run build</code></pre>
-<p>Use Node.js 22.12+. Deploy website/dist only. Project links and base paths are configured in website/.env.local; VITE_* values are public and must not contain secrets.</p>
 <h2>Source documentation</h2>
-<p>Read the root <a href="https://github.com/Louis-Gm/spectral-las/blob/main/README.md">README</a>, website/README.md and the package source in the repository. The website is a static guide; its point-cloud scene is synthetic and does not execute SpectralLAS.</p>
+<p>Read the root <a href="https://github.com/Louis-Gm/spectral-las/blob/main/README.md">README</a>, website/README.md and the package source in the repository. The website is a static guide; its point-cloud scene is synthetic and does not execute Spectral LAS.</p>
+<p><a href="./">Back to the project website</a></p>
 </main></body></html>

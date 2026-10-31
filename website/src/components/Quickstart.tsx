@@ -22,11 +22,6 @@ const EXAMPLES = [
     id: "configure", icon: FileCode2, title: "Use another configuration",
     desc: "No Headwall filenames are required by the Rust constructor.", file: "configure.py", lang: "python" as const,
     code: "from pathlib import Path\nfrom spectral_las import CameraConfig, FlightConfig, SwathConfig\nfrom spectral_las.trajectory import read_trajectory\n\ntrajectory = read_trajectory(\"trajectory.txt\", angles=\"radians\")\n# line_times: your synchronized, strictly increasing NumPy time vector\nflight = FlightConfig(\n    CameraConfig(samples=640, field_of_view_degrees=40.0),\n    trajectory,\n    (SwathConfig(0, Path(\"cube.hdr\"), Path(\"cube.bin\"), line_times),),\n    crs=\"EPSG:32619\", height_datum=\"ellipsoidal\",\n)\n# Geometry is the current pushbroom model, not an arbitrary camera plugin."
-  },
-  {
-    id: "build", icon: Terminal, title: "Build from source",
-    desc: "Python package and website have independent toolchains.", file: "terminal", lang: "bash" as const,
-    code: "# Python/Rust package, from the repository root:\npython -m pip install maturin\nmaturin develop --release\n\n# Website, in a separate terminal from the repository root:\ncd website\nnpm install\nnpm run dev"
   }
 ];
 const INSTALL = [
