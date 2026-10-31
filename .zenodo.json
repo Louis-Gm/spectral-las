@@ -8,7 +8,7 @@
     {
       "name": "Grand'Maison, Louis-Vincent",
       "affiliation": "Université Laval",
-      "orcid": "REPLACE_WITH_ORCID_IF_DESIRED"
+      "orcid": "0009-0006-2726-9677"
     }
   ],
   "description": "Spectral LAS colorizes LAS point clouds using panchromatic, RGB, multispectral, or hyperspectral imagery through an explicit Python interface and Rust-backed projection kernels.",

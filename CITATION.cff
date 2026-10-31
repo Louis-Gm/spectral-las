@@ -7,7 +7,7 @@ authors:
   - family-names: "Grand'Maison"
     given-names: "Louis-Vincent"
     email: "lvgra@ulaval.ca"
-    orcid: "https://orcid.org/REPLACE_WITH_ORCID_IF_DESIRED"
+    orcid: "https://orcid.org/0009-0006-2726-9677"
 repository-code: "https://github.com/Louis-Gm/spectral-las"
 url: "https://louis-gm.github.io/spectral-las/"
 abstract: "SpectralLAS colorizes LAS point clouds using panchromatic, RGB, multispectral, or hyperspectral imagery through an explicit Python interface and Rust-backed projection kernels."
@@ -20,5 +20,4 @@ keywords:
   - remote sensing
   - Rust
   - Python
-# Replace REPLACE_WITH_ZENODO_RECORD_ID after Zenodo issues the DOI and publishes the release record.
 doi: "10.5281/zenodo.REPLACE_WITH_ZENODO_RECORD_ID"
