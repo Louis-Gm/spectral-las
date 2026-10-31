@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SpectralLAS — installation and source guide</title>
+<style>
+body { margin:0; padding:2rem 1.25rem; background:#060912; color:#cbd5e1; font:16px/1.7 system-ui,sans-serif; }
+main { max-width:900px; margin:auto; }
+h1,h2 { color:#f8fafc; line-height:1.25; }
+h1 { font-size:2.5rem; } h2 { margin-top:2.5rem; }
+a { color:#67e8f9; } pre { overflow:auto; padding:1.25rem; border:1px solid #334155; border-radius:12px; background:#0a0f1c; }
+code { font-family:ui-monospace,monospace; font-size:.9em; }
+</style>
+</head>
+<body><main>
+
+<h1>SpectralLAS guide</h1>
+<p>Version 0.1.0 is available on <a href="https://pypi.org/project/spectral-las/">PyPI</a>. Pre-alpha: validate outputs against your acquisition data.</p>
+<h2>Install from PyPI</h2>
+<pre><code>python -m pip install spectral-las
+# With optional LAZ compression support:
+python -m pip install "spectral-las[laz]"</code></pre>
+<p>Use Python 3.10–3.12. Matching wheels do not require a Rust toolchain; source builds do.</p>
+<p>A Python/Rust processing package and an independently built React website in one repository.</p>
+<p><a href="./">Back to the project website</a></p>
+<h2>Build the package</h2>
+<p>Run these commands from the repository root. Use an active Python 3.10–3.12 environment and a Rust toolchain.</p>
+<pre><code>python -m pip install maturin
+maturin develop --release</code></pre>
+<h2>Python packages</h2>
+<ul><li><code>spectral_las.pointcloud</code>: LAS chunks, transforms, statistics, RGB and spectral painting.</li>
+<li><code>spectral_las.raster</code>: image windows, band operations, rasterization and mosaics.</li>
+<li><code>spectral_las.adapters</code>: vendor files translated into explicit flight configuration.</li></ul>
+<h2>Paint a point cloud</h2>
+<pre><code>from spectral_las.adapters.headwall import load_flight
+from spectral_las.pointcloud import paint_pointcloud
+
+flight = load_flight(
+    "flight_directory",
+    crs="EPSG:32619",
+    height_datum="ellipsoidal",
+    gps_utc_offset_seconds=18.0,  # Example: verify for your acquisition epoch.
+)
+paint_pointcloud(flight, "input.las", "painted.las")</code></pre>
+<p>Output: LAS, a row-aligned spectra array, and a completion manifest. Coordinates and heights must match the declared flight references. Check the repository README and source configuration for acquisition-specific conventions.</p>
+<h2>Image expressions</h2>
+<pre><code>from spectral_las.raster import calculate_bands
+calculate_bands("image.tif", "index.tif", {"ndvi": "(nir-red)/(nir+red)"},
+                {"red": 30, "nir": 50})</code></pre>
+<p>All public spectral indices are zero-based. Choose bands matching your actual wavelengths; these indices are examples, not a sensor-specific prescription.</p>
+<h2>Rasterize spectral attributes</h2>
+<pre><code>from spectral_las.raster import rasterize_pointcloud
+rasterize_pointcloud("painted.las", "mean.tif", resolution=0.2,
+                     fields=("hs:10", "hs:30"), reducer="mean")</code></pre>
+<p>Reducers include mean, min, max and finite-observation count. Scratch disk grows with selected data. A value_transform callback acts before cell reduction; calculate a raster expression afterward for post-reduction band math.</p>
+<h2>Current limits</h2>
+<ul><li>Native fusion reads little-endian float32 ENVI cubes with zero header offset.</li>
+<li>The geometry is the supplied pushbroom model, not an arbitrary-camera engine.</li>
+<li>Point-sampled visibility is not continuous-surface occlusion.</li>
+<li>The global painting depth map remains in RAM. Orthomosaics use a capped but in-memory surface.</li>
+<li>Original interpolation and tile-edge splatting require acquisition-level validation.</li>
+<li>PyPI availability and packaging checks do not establish processing accuracy, broad sensor coverage or benchmark performance.</li></ul>
+<h2>Website development</h2>
+<pre><code>cd website
+npm install
+npm run dev
+# Production build:
+npm run build</code></pre>
+<p>Use Node.js 22.12+. Deploy website/dist only. Project links and base paths are configured in website/.env.local; VITE_* values are public and must not contain secrets.</p>
+<h2>Source documentation</h2>
+<p>Read the root <a href="https://github.com/Louis-Gm/spectral-las/blob/main/README.md">README</a>, website/README.md and the package source in the repository. The website is a static guide; its point-cloud scene is synthetic and does not execute SpectralLAS.</p>
+</main></body></html>

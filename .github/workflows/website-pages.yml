@@ -1,0 +1,54 @@
+name: Deploy SpectralLAS website
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: spectral-las-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/configure-pages@v5
+      - name: Install frontend dependencies
+        working-directory: website
+        shell: bash
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+      - name: Build website
+        working-directory: website
+        env:
+          VITE_SITE_BASE_PATH: /spectral-las/
+          VITE_REPOSITORY_URL: https://github.com/Louis-Gm/spectral-las
+          VITE_DOCS_URL: ""
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
