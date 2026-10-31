@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# Native/build output
+*.pyd
+*.so
+*.dylib
+*.dll
+*.pdb
+target/
+dist/
+build/
+# Frontend
+node_modules/
+*.tsbuildinfo
+# Local configuration and data
+.env
+.env.local
+.env.*.local
+!.env.example
+data/
+scratch/
+*.las
+*.laz
+*.npy
+*.bin
+# Editors/OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+website
+package/validate_rgb_merge.py
+package/format_img_idx.py
+package/download_pointcloud.py
+package/profile_rgb_merge.py
+package/match_lidar.py
+package/lidar_extent.py
+# Cargo.lock and package-lock.json are intentionally NOT ignored.

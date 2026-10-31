@@ -1,0 +1,28 @@
+name: Website build
+on:
+  push:
+    paths: ["website/**", ".github/workflows/website-build.yml"]
+  pull_request:
+    paths: ["website/**", ".github/workflows/website-build.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: npm install
+      - name: Build static site
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spectral-las-website
+          path: website/dist/

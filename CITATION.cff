@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this source, cite spectral-las."
+title: "spectral-las: a Rust-backed Python package for point cloud colorization, supporting all your imagery needs from panchromatic, to RGB, to hyperspectral."
+version: 0.1.0
+license: Apache-2.0
+authors:
+  - family-names: "Grand'Maison"
+    given-names: "Louis-Vincent"
+# No release DOI, publication, repository URL or release date is yet asserted.

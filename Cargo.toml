@@ -1,0 +1,19 @@
+[package]
+name = "spectral-las"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "A Rust-backed Python package for point cloud colorization, supporting all your imagery needs from panchromatic, to RGB, to hyperspectral."
+
+[lib]
+name = "_native"
+crate-type = ["cdylib"]
+path = "package/rust/src/lib.rs"
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+numpy = "0.20"
+rayon = "1.8"
+nalgebra = "0.32.3"
+memmap2 = "0.7"
+rstar = "0.12.2"

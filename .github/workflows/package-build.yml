@@ -1,0 +1,44 @@
+name: Package build
+on:
+  push:
+    paths:
+      - "package/**"
+      - "pyproject.toml"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "LICENSE"
+      - "NOTICE"
+      - ".github/workflows/package-build.yml"
+  pull_request:
+    paths:
+      - "package/**"
+      - "pyproject.toml"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "LICENSE"
+      - "NOTICE"
+      - ".github/workflows/package-build.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install build backend
+        run: python -m pip install "maturin>=1.7,<2"
+      - name: Build wheel
+        run: maturin build --release --out dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spectral-las-wheel-${{ matrix.os }}-python311
+          path: dist/*.whl
