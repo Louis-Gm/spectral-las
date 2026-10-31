@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use SpectralLAS, please cite it using this metadata."
+message: "If you use Spectral LAS, please cite it using this metadata."
 title: "Spectral LAS: a Rust-backed Python package for point cloud colorization, supporting all your imagery needs from panchromatic, to RGB, to hyperspectral."
-version: 0.1.0
+version: 0.1.1
 license: Apache-2.0
 authors:
   - family-names: "Grand'Maison"
@@ -10,7 +10,7 @@ authors:
     orcid: "https://orcid.org/0009-0006-2726-9677"
 repository-code: "https://github.com/Louis-Gm/spectral-las"
 url: "https://louis-gm.github.io/spectral-las/"
-abstract: "SpectralLAS colorizes LAS point clouds using panchromatic, RGB, multispectral, or hyperspectral imagery through an explicit Python interface and Rust-backed projection kernels."
+abstract: "Spectral LAS colorizes LAS point clouds using panchromatic, RGB, multispectral, or hyperspectral imagery through an explicit Python interface and Rust-backed projection kernels."
 keywords:
   - lidar
   - point cloud
@@ -20,4 +20,4 @@ keywords:
   - remote sensing
   - Rust
   - Python
-doi: "10.5281/zenodo.REPLACE_WITH_ZENODO_RECORD_ID"
+doi: "10.5281/zenodo.23842730"

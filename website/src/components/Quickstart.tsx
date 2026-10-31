@@ -28,7 +28,6 @@ const INSTALL = [
   { id: "pypi", cmd: "python -m pip install spectral-las" },
   { id: "laz", cmd: 'python -m pip install "spectral-las[laz]"' },
   { id: "source", cmd: "python -m pip install ." },
-  { id: "editable", cmd: "maturin develop --release" },
 ];
 export default function Quickstart() {
   const [active, setActive] = useState(EXAMPLES[0].id);

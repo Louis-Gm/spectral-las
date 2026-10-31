@@ -19,7 +19,7 @@
   </div><br />
 
   <div align="center">
-    <a href="https://zenodo.org/badge/latestdoi/REPLACE_WITH_ZENODO_RECORD_ID"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.REPLACE_WITH_ZENODO_RECORD_ID.svg" alt="DOI"></a>
+    <a href="https://doi.org/10.5281/zenodo.23842730"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23842730.svg" alt="DOI"></a>
     <img src="https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg" alt="Python versions">
     <img src="https://img.shields.io/badge/Apache%202.0-blue.svg" alt="License">
     <img src="https://img.shields.io/pypi/v/spectral-las?color=purple" alt="PyPI version">
@@ -30,7 +30,7 @@
 
 ## **About The Project**
 
-**SpectralLAS** is a Python package for colorizing LAS point clouds with imagery.
+**Spectral LAS** is a Python package for colorizing LAS point clouds with imagery.
 It supports workflows spanning panchromatic, RGB, multispectral, and
 hyperspectral data, with an explicit Python interface and Rust-backed projection
 kernels.
@@ -54,7 +54,7 @@ image bands, and reduce point attributes into raster products.
 * **Flexible imagery support:** Work with panchromatic, RGB, multispectral, and
   hyperspectral imagery.
 
-> **Pre-alpha software:** SpectralLAS is under active development. Its API and
+> **Pre-alpha software:** Spectral LAS is under active development. Its API and
 > supported acquisition workflows may change. Validate outputs against your own
 > acquisition data before using them as scientific or production deliverables.
 
@@ -62,7 +62,7 @@ image bands, and reduce point attributes into raster products.
 
 ### **Installation**
 
-Install SpectralLAS from PyPI with Python 3.10, 3.11, or 3.12:
+Install Spectral LAS from PyPI with Python 3.10, 3.11, or 3.12:
 
 ```sh
 python -m pip install spectral-las
@@ -127,7 +127,7 @@ Feel free to leave a feature request
 
 If you use this project in your research, please cite it as:
 
-Grand'Maison, L.-V. (2026). Spectral LAS (0.1.0) [software]. Zenodo. https://doi.org/10.5281/zenodo.REPLACE_WITH_ZENODO_RECORD_ID
+Grand'Maison, L.-V. (2026). Spectral LAS (0.1.1) [software]. Zenodo. https://doi.org/10.5281/zenodo.23842730
 
 ## **Contact**
 
