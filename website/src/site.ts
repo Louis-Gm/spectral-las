@@ -1,6 +1,6 @@
 export const site = {
   name: "Spectral LAS",
-  version: "0.1.0 · pre-alpha",
+  version: "0.1.1 · pre-alpha",
   repositoryUrl: (import.meta.env.VITE_REPOSITORY_URL ?? "").trim() || "https://github.com/Louis-Gm/spectral-las",
   pypiUrl: "https://pypi.org/project/spectral-las/",
   docsUrl: (import.meta.env.VITE_DOCS_URL ?? "").trim() || `${import.meta.env.BASE_URL}guide.html`,
