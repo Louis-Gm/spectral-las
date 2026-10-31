@@ -6,7 +6,6 @@ import { Logo } from "./Logo";
 const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#quickstart", label: "Quickstart" },
-  
   { href: "#architecture", label: "Architecture" },
   { href: "#research", label: "Research" },
   { href: "#docs", label: "Docs" },
@@ -35,7 +34,7 @@ export default function Navbar() {
         </a>
         <div className="hidden items-center gap-1 lg:flex">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="rounded-md px-3 py-2 text-sm text-slate-400 transition hover:text-white">
+            <a key={l.href} href={l.href} className="rounded-md px-3 py-2 text-sm text-white transition hover:text-[#FFEC83]">
               {l.label}
             </a>
           ))}

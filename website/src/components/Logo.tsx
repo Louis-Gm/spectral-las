@@ -26,7 +26,7 @@ export function Logo({ width = 62, showText = true }: { width?: number; showText
       <LogoMark width={width} />
       {showText && (
         <span className="text-[1.15rem] font-semibold tracking-tight text-white">
-          Spectral<span className="spectral-text">LAS</span>
+          Spectral <span className="spectral-text">LAS</span>
         </span>
       )}
     </span>

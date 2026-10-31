@@ -40,7 +40,6 @@ npm run typecheck
 npm run build
 ```
 
-- Describe the acquisition context, limitations, and validation performed.
 - Do not commit proprietary imagery, LAS/LAZ files, trajectories, credentials,
   or large generated artifacts.
 - Do not commit `node_modules/`, `website/dist/`, or local `.env` files.
@@ -50,7 +49,6 @@ npm run build
 - Prefer explicit configuration over silent inference.
 - Preserve clear separation between Python orchestration and Rust kernels.
 - Document coordinate systems, vertical datums, time references, and units.
-- Avoid claiming accuracy, sensor support, or performance without validation.
 - Keep the public API small and backward compatibility explicit.
 
 ## Issue reporting

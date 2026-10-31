@@ -13,7 +13,7 @@ export default function Pipeline() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeader
           eyebrow="How it works"
-          title="From photons to points, rigorously"
+          title="From photons to points"
           body="Sensor conventions and validation requirements are explicit; accuracy must be checked against acquisition data."
         />
         <div className="relative mt-16">

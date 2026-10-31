@@ -52,14 +52,16 @@ export default function Hero() {
             <ArrowRight className="h-3 w-3" />
           </a>
           <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
-            Spectral color
-            <br />
-            for your LAS <span className="spectral-text">point clouds</span>.
+          Bring <span className="spectral-text">full spectrum color</span>
+          <br />
+          to your point clouds.
           </h1>
+
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-            Spectral LAS brings imagery and LAS point clouds together with a Python API
-            and Rust projection kernels. Work with RGB, multispectral and hyperspectral
-            workflows, retain point-aligned spectra, and create raster products.
+            Spectral LAS allows for flexible point cloud colorization workflows using either forward or reverse projection methods. 
+            <br />
+            The package is designed to work with any image type, including panchromatic, RGB, multispectral and hyperspectral imagery. 
+            Colorization using derivative raster products such as spectral indices is also supported.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <CopyCommand cmd={site.installCommand} />
