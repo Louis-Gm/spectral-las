@@ -13,23 +13,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
+          cache-dependency-path: website/package-lock.json
       - uses: actions/configure-pages@v5
-      - name: Install frontend dependencies
-        working-directory: website
-        shell: bash
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
       - name: Build website
-        working-directory: website
         env:
           VITE_SITE_BASE_PATH: /spectral-las/
           VITE_REPOSITORY_URL: https://github.com/Louis-Gm/spectral-las

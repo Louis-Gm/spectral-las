@@ -1,12 +1,24 @@
 name: Website build
+
 on:
   push:
-    paths: ["website/**", ".github/workflows/website-build.yml"]
+    branches: [main]
+    paths:
+      - "website/**"
+      - ".github/workflows/website-build.yml"
   pull_request:
-    paths: ["website/**", ".github/workflows/website-build.yml"]
+    paths:
+      - "website/**"
+      - ".github/workflows/website-build.yml"
   workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: website-build-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,11 +30,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
+          cache-dependency-path: website/package-lock.json
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
       - name: Build static site
+        env:
+          VITE_SITE_BASE_PATH: /spectral-las/
+          VITE_REPOSITORY_URL: https://github.com/Louis-Gm/spectral-las
         run: npm run build
       - uses: actions/upload-artifact@v4
         with:
           name: spectral-las-website
           path: website/dist/
+          if-no-files-found: error

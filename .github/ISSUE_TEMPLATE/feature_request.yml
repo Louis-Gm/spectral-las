@@ -1,0 +1,38 @@
+name: Feature request
+description: Propose a capability, workflow, or integration for SpectralLAS.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an improvement. Please describe the workflow and
+        the imagery or point-cloud context where it would help.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What workflow is difficult, missing, or inefficient?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior or API.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Data and acquisition context
+      description: Sensor type, imagery type, LAS/LAZ version, CRS, and relevant constraints.
+    validations:
+      required: false
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This is a package feature, not a request to process a private dataset.
+        - label: I understand that SpectralLAS is pre-alpha and its API may change.
