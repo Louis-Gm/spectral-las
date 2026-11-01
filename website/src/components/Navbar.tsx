@@ -28,9 +28,6 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
         <a href="#top" className="flex items-center gap-3">
           <Logo />
-          <span className="hidden rounded-full border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-slate-400 sm:inline">
-            {site.version}
-          </span>
         </a>
         <div className="hidden items-center gap-1 lg:flex">
           {LINKS.map((l) => (

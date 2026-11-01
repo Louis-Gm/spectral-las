@@ -21,7 +21,7 @@ export function CopyCommand({ cmd }: { cmd: string }) {
         }
       }}
       aria-label={copied ? "Command copied" : "Copy installation command"}
-      className="group inline-flex items-center gap-3 rounded-lg border border-white/10 bg-black/40 px-4 py-2.5 font-mono text-sm text-slate-200 transition hover:border-white/20"
+      className="group inline-flex items-center gap-3 rounded-lg border border-white/10 bg-black/40 px-4 py-2.5 font-mono text-sm text-yellow-100 transition hover:border-white/20"
     >
       <span className="text-slate-500">$</span>
       <span>{cmd}</span>
@@ -43,14 +43,6 @@ export default function Hero() {
       <div className="pointer-events-none absolute top-40 right-0 h-[300px] w-[400px] rounded-full bg-cyan-500/10 blur-[100px]" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:px-8">
         <div>
-          <a
-            href="#architecture"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1 pl-1 pr-3 text-xs text-slate-300 transition hover:border-white/20"
-          >
-            <span className="spectral-bg rounded-full px-2 py-0.5 font-semibold text-white">New</span>
-            A focused Python package with a Rust backend
-            <ArrowRight className="h-3 w-3" />
-          </a>
           <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
           Bring
           <br /><span className="spectral-text">full spectrum color</span>
@@ -58,11 +50,12 @@ export default function Hero() {
           to your point clouds.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-            Spectral LAS allows for flexible point cloud colorization workflows using either forward or reverse projection methods. 
-            <br />
-            The package is designed to work with any image type, including panchromatic, RGB, multispectral and hyperspectral imagery. 
-            Colorization using derivative raster products such as spectral indices is also supported.
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+            Both forward and reverse projection methods are available.
+          </p>
+          <p className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300">
+            All image types are supported, including panchromatic, RGB, multispectral and hyperspectral imagery. 
+            Colorization using spectral indices is also supported.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <CopyCommand cmd={site.installCommand} />
@@ -74,7 +67,7 @@ export default function Hero() {
             </a>
             <a
               href={site.docsUrl}
-              className="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:text-white"
+              className="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:text-[#f2de83]"
             >
               <BookOpen className="h-4 w-4" /> Read the docs
             </a>
