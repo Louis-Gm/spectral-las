@@ -46,8 +46,35 @@ export function DocsCTA() {
 export function Footer() {
   return <footer className="border-t border-white/5 px-5 py-12">
     <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-      <div><Logo /><p className="mt-3 text-sm text-slate-500">Spectral imagery and point-cloud processing with a Rust core.</p></div>
-      <div className="flex gap-6 text-sm text-slate-400"><a href={site.docsUrl}>Source guide</a><a href="#quickstart">Quickstart</a><a href={site.pypiUrl}>PyPI</a>{site.repositoryUrl && <a href={site.repositoryUrl}>Repository</a>}</div>
+      <div><Logo /><p className="mt-3 text-sm text-slate-100">Bring <span className="spectral-text-soft">full spectrum color</span> to your point clouds.</p></div>
+      <div className="flex gap-6 text-sm text-slate-100">
+        <a
+          href={site.docsUrl}
+          className="transition hover:text-[#FFEC83]"
+        >
+          Source guide
+        </a>
+        <a
+          href="#quickstart"
+          className="transition hover:text-[#FFEC83]"
+        >
+          Quickstart
+        </a>
+        <a
+          href={site.pypiUrl}
+          className="transition hover:text-[#FFEC83]"
+        >
+          PyPI
+        </a>
+        {site.repositoryUrl && (
+          <a
+            href={site.repositoryUrl}
+            className="transition hover:text-[#FFEC83]"
+          >
+            Repository
+          </a>
+        )}
+      </div>
     </div>
   </footer>;
 }

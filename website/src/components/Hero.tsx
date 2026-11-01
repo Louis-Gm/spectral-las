@@ -45,7 +45,7 @@ export default function Hero() {
         <div>
           <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
           Bring
-          <br /><span className="spectral-text">full spectrum color</span>
+          <br /><span className="spectral-text-soft">full spectrum color</span>
           <br />
           to your point clouds.
           </h1>

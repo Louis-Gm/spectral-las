@@ -16,6 +16,21 @@ body {
   background-clip: text;
   color: transparent;
 }
+.spectral-text-soft {
+  background: linear-gradient(
+    90deg,
+    #c4b5fd,
+    #93c5fd,
+    #67e8f9,
+    #86efac,
+    #fde68a,
+    #fdba74,
+    #fca5a5
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 .spectral-bg {
   background: linear-gradient(90deg, #7c3aed, #3b82f6, #06b6d4, #22c55e, #eab308, #f97316, #ef4444);
 }
