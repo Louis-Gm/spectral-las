@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use Spectral LAS, please cite it using this metadata."
-title: "Spectral LAS: a Rust-backed Python package for point cloud colorization, supporting all your imagery needs from panchromatic, to RGB, to hyperspectral."
+title: "Spectral LAS: An open-source point cloud colorization method for multidimensional imagery."
 version: 0.1.1
 license: Apache-2.0
 authors:
