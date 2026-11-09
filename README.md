@@ -130,7 +130,7 @@ Feel free to leave a feature request
 
 If you use this project in your research, please cite it as:
 
-Grand'Maison, L.-V. (2026). Spectral LAS (0.1.1) [software]. Zenodo. https://doi.org/10.5281/zenodo.23842730
+Grand'Maison, L.-V. (2026). Spectral LAS: An open-source point cloud colorization method for multidimensional imagery (v0.1.1) [software]. Zenodo. https://doi.org/10.5281/zenodo.23842730
 
 ## **Contact**
 
