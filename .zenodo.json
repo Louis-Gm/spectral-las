@@ -1,5 +1,5 @@
 {
-  "title": "Spectral LAS: a Rust-backed Python package for point cloud colorization, supporting all your imagery needs from panchromatic, to RGB, to hyperspectral.",
+  "title": "Spectral LAS: An open-source point cloud colorization method for multidimensional imagery.",
   "version": "0.1.1",
   "upload_type": "software",
   "access_right": "open",
